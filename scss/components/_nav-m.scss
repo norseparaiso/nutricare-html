@@ -1,0 +1,225 @@
+@media (min-width: 1025px){
+	.mobile-menu-open{
+		padding-right: 0px !important;
+	}
+}
+@media(max-width: 1024px) {
+	.nutricare-nav {
+		display: none;
+	}
+	.nutricare-content {
+		// overflow-y: scroll;
+		background: #fff;
+	}
+	.nutricare-content,
+	.nutricare-content-inner {
+		position: relative;
+	}
+	.nutricare-root {
+		position: relative;
+		overflow: hidden;
+	}
+	.nutricare-site {
+		position: relative;
+		left: 0;
+		z-index: 99;
+		height: 100%;
+		-webkit-transition: -webkit-transform 0.5s;
+		transition: transform 0.5s;
+		
+		&::after {
+			position: absolute;
+			top: 0;
+			right: 0;
+			width: 0;
+			height: 0;
+			background: rgba(0,0,0,0.2);
+			content: '';
+			opacity: 0;
+			-webkit-transition: opacity 0.5s, width 0.1s 0.5s, height 0.1s 0.5s;
+			transition: opacity 0.5s, width 0.1s 0.5s, height 0.1s 0.5s;
+			z-index: 99;
+		}
+	}
+	.nutricare-menu-open {
+		.nutricare-site {
+			&::after {
+				width: 100%;
+				height: 100%;
+				opacity: 1;
+				-webkit-transition: opacity 0.5s;
+				transition: opacity 0.5s;
+			}
+		}
+		.nutricare-menu {
+		 	&::after {
+				width: 0;
+				height: 0;
+				opacity: 0;
+				-webkit-transition: opacity 0.5s, width 0.1s 0.5s, height 0.1s 0.5s;
+				transition: opacity 0.5s, width 0.1s 0.5s, height 0.1s 0.5s;
+			}
+		}
+	}
+	.nutricare-menu {
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 100;
+		// visibility: hidden;
+		// opacity: 0;
+		width: 300px;
+		height: 100%;
+		padding: 15px;
+		background: #fff;
+		-webkit-transition: all 0.5s;
+		transition: all 0.5s;
+		overflow-x: auto;
+		-webkit-transform: translate3d(-100%, 0, 0);
+		transform: translate3d(-100%, 0, 0);
+	
+		// &::after {
+		// 	position: absolute;
+		// 	top: 0;
+		// 	right: 0;
+		// 	width: 100%;
+		// 	height: 100%;
+		// 	background: rgba(0,0,0,0.2);
+		// 	content: '';
+		// 	opacity: 1;
+		// 	-webkit-transition: opacity 0.5s;
+		// 	transition: opacity 0.5s;
+		// }
+		.nutricare-mobile-logo {
+			text-align: center;
+			margin-bottom: 20px;
+
+			img {
+				max-width: 160px;
+			}
+		}
+		.mobile-search {
+			margin-bottom: 50px;
+		}
+		
+		ul {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+		}
+
+		.header-search {
+			margin-left: 0;
+		}
+	}
+	/* Fallback example for browsers that don't support 3D transforms (and no JS fallback) */
+	.no-csstransforms3d .nutricare-site,
+	.no-js .nutricare-site {
+		padding-left: 300px;
+	}
+	.nutricare-close-btn {
+	    background: url(../../images/sprite.svg);
+		width: 24px;
+		height: 24px;
+		display: inline-block;	
+		position: absolute;
+		font-size: 24px;
+		cursor: pointer;
+		top: 0;
+		left: 0;
+		background-position: -360px 0px;
+		opacity: 0.8;
+	}
+	.list-menu {
+		li {
+			margin-bottom: 30px; 
+		}
+		a {
+			font-size: 16px;
+			line-height: 24px;
+			color: $black;
+		}
+		.nutricare-icon {
+			position: relative;
+			top: 0;
+			float: left;
+			margin-right: 16px;
+			opacity: 0.7;
+		}
+
+		&.row-list-1 {
+			margin-top: 40px;
+		}
+		
+		&.row-list-1, &.row-list-2, &.row-list-3 {
+			border-bottom: 2px solid #e5e5e5;
+			padding-bottom: 20px;
+		}
+		
+		&.row-list-2 {
+			margin-top: 40px;
+			margin-bottom: 40px;
+			
+			h3 {
+				text-transform: uppercase;
+				font-size: 16px;
+				font-weight: 600;
+				color: $black;
+				line-height: 24px;
+				margin-bottom: 26px;
+			}
+		}
+		&.row-list-3 {
+			margin-top: 40px;
+			margin-bottom: 40px;
+			a {
+				font-weight: bold;
+				text-transform: uppercase;
+			}
+		}
+	}
+	// restructured push-effect
+	body{
+		&:before{
+			content: " ";
+			display: block;
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			width: 0px;
+			height: 0px;
+			z-index: 5;
+			background: rgba(0,0,0,0.2);
+			opacity: 0;
+			transition: opacity 0.3s;
+			// transition-delay: 0.3s;
+		}
+	}
+	.nutricare-header-wrap, .nutricare-footer-wrap, .nutricare-content-wrap, .nutricare-menu.nutricare-push-effect{
+		transition: transform 0.3s;
+		-webkit-transition: -webkit-transform 0.3s;
+	}
+	.mobile-menu-open{
+		position: fixed;
+		overflow: hidden;
+		width: 100%;
+		&:before{
+			left: 0px;
+			width: 100%;
+			height: 100%;
+			opacity: 1;
+		}
+		.nutricare-menu{
+			// visibility: visible;
+			// opacity: 1;
+			z-index: 6 !important;
+			overflow-y: auto;
+			height: 100vh;
+			-webkit-transform: translate3d(0px, 0, 0);
+			transform: translate3d(0px, 0, 0);
+		}
+		.nutricare-footer-wrap, .nutricare-content, .nutricare-header-wrap *, body > div:not(.nutricare-header-wrap){
+			z-index: 4;
+		}
+	}
+}

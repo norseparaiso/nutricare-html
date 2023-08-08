@@ -1,0 +1,80 @@
+@mixin css3($property, $value) {
+	-webkit-#{$property}: $value;
+	-moz-#{$property}: $value;
+	-ms-#{$property}: $value;
+	-o-#{$property}: $value;
+	#{$property}: $value;
+}
+@mixin clearlist {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	& li {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+}
+
+@mixin clearfloat {
+	&:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+}
+
+@mixin transition($params) {
+  -webkit-transition: $params;
+     -moz-transition: $params;
+   -khtml-transition: $params;
+       -o-transition: $params;
+          transition: $params;
+}
+
+@mixin scale($params) {
+  -webkit-transform: scale($params);
+     -moz-transform: scale($params);
+   -khtml-transform: scale($params);
+       -o-transform: scale($params);
+          transform: scale($params);
+}
+
+@mixin box-shadow($params) {
+  -webkit-box-shadow:$params;
+     -moz-box-shadow:$params;
+   -khtml-box-shadow:$params;
+       -o-box-shadow:$params;
+          box-shadow:$params;
+}
+
+@mixin rotate($params) {
+  -webkit-transform: rotate($params);
+     -moz-transform: rotate($params);
+   -khtml-transform: rotate($params);
+       -o-transform: rotate($params);
+          transform: rotate($params);
+}
+
+@mixin opacity($opacity) {
+  -webkit-opacity:$opacity;
+     -moz-opacity:$opacity;
+   -khtml-opacity:$opacity;
+       -o-opacity:$opacity;
+          opacity:$opacity;
+}
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+   -khtml-border-radius: $radius;
+       -o-border-radius: $radius;
+          border-radius: $radius;
+}
+
+@mixin flex($width){
+  -ms-flex: 0 0 $width;
+  flex: 0 0 $width;
+  max-width: $width;
+}
+@import 'media-queries';
